@@ -36,7 +36,7 @@
 }
 
 .band--sage {
-  background: linear-gradient(180deg, var(--sage-soft) 0%, var(--sage) 100%);
+  background: linear-gradient(180deg, #4e6c52 0%, #7d9878 40%, #d5ddc6 78%, #faf8ec 100%);
   padding: 0;
   overflow: hidden;
 }
@@ -46,11 +46,11 @@
 }
 
 .band--blue {
-  background: var(--blue);
+  background: var(--cream);
 }
 
 .band--dark {
-  padding: 18vh var(--page-pad);
+  padding: 14vh var(--page-pad);
 }
 
 .grid-2 {

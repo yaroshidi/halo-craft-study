@@ -153,7 +153,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     document.documentElement.classList.add("reduce-motion");
   }
-  bootLenis();
+  window.__haloLenis = bootLenis();
   initHeader();
   initMenu();
   initNavCurrent();

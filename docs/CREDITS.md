@@ -1,21 +1,22 @@
 # Media credits
 
-All photographs and video clips are used under the [Pexels License](https://www.pexels.com/license/): free for commercial and non-commercial use, no permission required. Attribution is not required by the license and is included here for courtesy. No Sunday, Memo, or other product-branded footage is used.
+## Generated Halo product media
 
-Compressed locally for this study (shorter HD loops, audio removed). Original files remain on Pexels.
+Hero, chapter, and carousel subjects use original generated stills and short loops of the fictional Halo canister (cream matte squircle with a terracotta mid-ring, no face). These are not Pexels plates and are not Sunday/Memo footage.
 
-## Video
+Used as:
 
-- Curtis Adams — *Modern kitchen interior design* — https://www.pexels.com/video/modern-kitchen-interior-design-15887128/ — used as the home hero loop (`hero.mp4`).
-- Max Vakhtbovych — *Person arranging dining table* — https://www.pexels.com/video/person-arranging-dining-table-7614421/ — used as the kitchen chapter film (`kitchen.mp4`).
-- Tima Miroshnichenko — *Woman washing dishes* — https://www.pexels.com/video/woman-washing-dishes-6195929/ — used as a kitchen tile (`dishes.mp4`).
-- Sarah Chai — *Woman folding clothes* — https://www.pexels.com/video/woman-folding-clothes-7279093/ — used as a kitchen tile (`laundry.mp4`).
+- `halo-hero.jpg` / `halo-hero.webp` + `halo-hero.mp4` — home hero close-up
+- `halo-hero-alt.jpg` / `halo-hero-alt.webp` — anatomy / CTA still
+- `halo-kitchen.jpg` / `halo-kitchen.webp` + `halo-kitchen.mp4` — kitchen chapter
+- `halo-macro.jpg` / `halo-macro.webp` + `halo-macro.mp4` — product macro / bento tile
+- `halo-laundry.jpg` / `halo-laundry.webp` + `halo-laundry.mp4` — laundry bento + capture still
+- `halo-homes.jpg` / `halo-homes.webp` — unfamiliar-homes still and carousel practice tile
 
-## Photographs
+Posters are WebP conversions of the matching stills. Loops are short, muted MP4s of the same product identity.
 
-- hi room — *Interior design of kitchen and living room* — https://www.pexels.com/photo/interior-design-of-kitchen-and-living-room-17158669/ — blur-to-sharp still (`homes.webp`).
-- Dmitry Zvolskiy — *Chopping boards near oven* — https://www.pexels.com/photo/2062426/ — designed-for-real-use card (`designed-home.webp`).
-- Jean van der Meulen — *Photo of living room* — https://www.pexels.com/photo/1457842/ — Capture Sleeve still (`designed-living.webp`).
-- Mark McCammon — *Kitchen and dining area* — https://www.pexels.com/photo/1080721/ — designed-for-real-use card (`designed-kitchen.webp`).
+## Type
 
-Posters (`*-poster.webp`) are frames extracted from the clips above.
+- Geist Sans (weights 300 / 400 / 500), by Vercel, licensed under the SIL Open Font License 1.1.
+
+No Sunday, Memo, or other product-branded footage is used.

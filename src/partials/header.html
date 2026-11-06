@@ -2,14 +2,17 @@
   <div class="pill">
     <a class="wordmark" href="{{prefix}}/">
       <span class="mark" aria-hidden="true">
-      <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
-        <circle cx="12" cy="12" r="7.25" fill="none" stroke="currentColor" stroke-width="1.75"/>
-        <circle cx="12" cy="12" r="2.15" fill="currentColor"/>
-      </svg>
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+          <circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="2.35"/>
+        </svg>
       </span>
       Northlane
     </a>
-    <button type="button" class="menu-toggle" data-menu-toggle aria-expanded="false" aria-controls="site-menu">Menu</button>
+    <button type="button" class="menu-toggle" data-menu-toggle aria-expanded="false" aria-controls="site-menu" aria-label="Menu">
+      <svg viewBox="0 0 16 12" width="14" height="10" aria-hidden="true">
+        <path d="M1 1.25h14M1 6h14M1 10.75h14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </button>
   </div>
   <nav id="site-menu" class="menu-panel" data-menu hidden aria-label="Primary">
     <a href="{{prefix}}/">Home</a>

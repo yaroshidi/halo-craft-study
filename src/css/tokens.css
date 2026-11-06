@@ -2,24 +2,25 @@
   --bg: #ffffff;
   --bg-elevated: #ffffff;
   --cream: #faf8ec;
-  --sage: #c5d1c4;
-  --sage-soft: #e4ebe3;
+  --sage: #6b8a6e;
+  --sage-soft: #c5d4c2;
+  --sage-rich: #4e6c52;
   --offwhite: #f3f1ea;
-  --blue: #d4e2ef;
+  --sand: #e6d5c3;
   --dark-band: #161513;
   --dark-ink: #f4f2ee;
   --ink: #1a1a1a;
   --ink-muted: #5e5c58;
   --line: rgba(26, 26, 26, 0.12);
-  --accent: #d4764e;
+  --accent: #e07a4c;
   --accent-soft: #f0d2c3;
   --loader: #e07a4c;
-  --footer-wash: #c5d1c4;
+  --footer-wash: #6b8a6e;
 
-  --font-sans: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-mono: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-sans: "Geist Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-mono: "Geist Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
-  --text-display: clamp(2.8rem, 9vw, 5.6rem);
+  --text-display: clamp(1.65rem, min(6.55vw, calc((100vw - 48px) / 10.8)), 6rem);
   --text-h2: clamp(1.85rem, 4.2vw, 3.25rem);
   --text-h3: clamp(1.15rem, 1.6vw, 1.4rem);
   --text-body: 0.9375rem;
@@ -39,6 +40,7 @@
   --radius: 8px;
   --radius-sm: 8px;
   --gap-tight: 4px;
+  --gap-bento: 6px;
   --page-pad: 12px;
   --max: 1160px;
   --header-h: 3.65rem;

@@ -1,42 +1,25 @@
-const MARK = `
-  <div class="curtain__mark" aria-hidden="true">
-    <svg viewBox="0 0 24 24" width="52" height="52">
-      <circle cx="12" cy="12" r="7.25" fill="none" stroke="currentColor" stroke-width="1.75"/>
-      <circle cx="12" cy="12" r="2.15" fill="currentColor"/>
-    </svg>
-  </div>
-`;
+const MAX_MS = 1200;
+
+function hide(el) {
+  el.classList.add("is-done");
+  el.classList.remove("is-leaving");
+}
 
 export function initCurtain() {
   const el = document.getElementById("curtain");
   if (!el) return;
 
-  el.innerHTML = MARK;
-
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if (reduce || typeof gsap === "undefined") {
-    el.style.display = "none";
+  if (reduce) {
+    hide(el);
     return;
   }
 
-  const entering = sessionStorage.getItem("halo-curtain") === "1";
-  if (entering) sessionStorage.removeItem("halo-curtain");
-
-  const mark = el.querySelector(".curtain__mark");
-  gsap.set(el, { autoAlpha: 1 });
-  if (mark) {
-    gsap.fromTo(
-      mark,
-      { scale: 0.82, autoAlpha: 0 },
-      { scale: 1, autoAlpha: 1, duration: 0.45, ease: "power2.out" }
-    );
-  }
-
-  gsap.to(el, {
-    autoAlpha: 0,
-    duration: 0.7,
-    ease: "power2.inOut",
-    delay: entering ? 0.12 : 0.62,
+  // CSS owns the first-load animation. Never wait on fonts, video, or CDNs.
+  const done = () => hide(el);
+  window.setTimeout(done, MAX_MS);
+  el.addEventListener("animationend", (e) => {
+    if (e.animationName === "curtain-dismiss") done();
   });
 
   document.addEventListener("click", (e) => {
@@ -49,14 +32,16 @@ export function initCurtain() {
     if (a.hasAttribute("download")) return;
 
     e.preventDefault();
-    sessionStorage.setItem("halo-curtain", "1");
-    gsap.to(el, {
-      autoAlpha: 1,
-      duration: 0.4,
-      ease: "power2.inOut",
-      onComplete: () => {
-        location.href = url.href;
-      },
-    });
+    el.classList.remove("is-done");
+    el.classList.add("is-leaving");
+
+    let hopped = false;
+    const go = () => {
+      if (hopped) return;
+      hopped = true;
+      location.href = url.href;
+    };
+    window.setTimeout(go, 380);
+    window.setTimeout(go, 800);
   });
 }

@@ -18,20 +18,32 @@ function initInnerHero() {
 }
 
 function startClip() {
-  const top = Math.round(window.innerHeight * (window.innerWidth < 720 ? 0.46 : 0.4));
+  const top = Math.round(window.innerHeight * 0.5);
   return `inset(${top}px 12px 12px 12px round 8px)`;
+}
+
+function setHeroEndState(media, scrim, ink, light, kickerInk, kickerLight) {
+  if (media) media.style.clipPath = "inset(0px 0px 0px 0px round 0px)";
+  if (scrim) scrim.style.opacity = "0.42";
+  if (ink) ink.style.opacity = "0";
+  if (light) light.style.opacity = "1";
+  if (kickerInk) kickerInk.style.opacity = "0";
+  if (kickerLight) kickerLight.style.opacity = "1";
 }
 
 function initHeroExpand() {
   const hero = document.querySelector("[data-hero]");
   const media = document.querySelector("[data-hero-media]");
-  const copy = document.querySelector("[data-hero-copy]");
+  const scrim = document.querySelector("[data-hero-scrim]");
+  const ink = document.querySelector(".hero__title-ink");
+  const light = document.querySelector(".hero__title-light");
+  const kickerInk = document.querySelector(".hero__kicker-ink");
+  const kickerLight = document.querySelector(".hero__kicker-light");
   const pin = hero?.querySelector(".hero__pin");
   if (!hero || !media || !pin) return;
 
   if (prefersReduce() || typeof ScrollTrigger === "undefined") {
-    media.style.clipPath = "inset(0px 0px 0px 0px round 0px)";
-    if (copy) copy.style.color = "#fff";
+    setHeroEndState(media, scrim, ink, light, kickerInk, kickerLight);
     return;
   }
 
@@ -39,8 +51,8 @@ function initHeroExpand() {
     scrollTrigger: {
       trigger: hero,
       start: "top top",
-      end: "+=155%",
-      scrub: true,
+      end: "+=160%",
+      scrub: 0.55,
       pin,
       pinSpacing: true,
       invalidateOnRefresh: true,
@@ -50,13 +62,19 @@ function initHeroExpand() {
   tl.fromTo(
     media,
     { clipPath: () => startClip() },
-    { clipPath: "inset(0px 0px 0px 0px round 0px)", ease: "none", duration: 1 },
+    { clipPath: "inset(0px 0px 0px 0px round 0px)", ease: "power2.inOut", duration: 1 },
     0
   );
 
-  if (copy) {
-    tl.fromTo(copy, { color: "#1a1a1a" }, { color: "#ffffff", ease: "none", duration: 0.55 }, 0);
+  if (scrim) {
+    tl.fromTo(scrim, { opacity: 0 }, { opacity: 0.42, ease: "power1.out", duration: 0.5 }, 0.06);
   }
+
+  // Crossfade dual layers instead of interpolating ink→white (avoids grey mush).
+  if (ink) tl.fromTo(ink, { opacity: 1 }, { opacity: 0, ease: "none", duration: 0.18 }, 0.28);
+  if (light) tl.fromTo(light, { opacity: 0 }, { opacity: 1, ease: "none", duration: 0.18 }, 0.3);
+  if (kickerInk) tl.fromTo(kickerInk, { opacity: 1 }, { opacity: 0, ease: "none", duration: 0.18 }, 0.28);
+  if (kickerLight) tl.fromTo(kickerLight, { opacity: 0 }, { opacity: 1, ease: "none", duration: 0.18 }, 0.3);
 }
 
 function initFilmPins() {
@@ -127,29 +145,22 @@ function initKinetic() {
   const words = [...root.querySelectorAll(".kinetic__word")];
   if (!words.length || prefersReduce() || typeof ScrollTrigger === "undefined") return;
 
-  const offsets = [
-    { x: -90, y: -56, r: -9 },
-    { x: 24, y: 78, r: 11 },
-    { x: 96, y: -36, r: 7 },
-  ];
-
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: root,
       start: "top top",
-      end: "+=95%",
+      end: "+=90%",
       pin: true,
-      scrub: true,
+      scrub: 0.4,
     },
   });
 
   words.forEach((word, i) => {
-    const o = offsets[i] || { x: 0, y: 40, r: 0 };
     tl.fromTo(
       word,
-      { x: o.x, y: o.y, rotate: o.r, autoAlpha: 0.18 },
-      { x: 0, y: 0, rotate: 0, autoAlpha: 1, ease: "none", duration: 1 },
-      0
+      { y: 64 + i * 12, autoAlpha: 0 },
+      { y: 0, autoAlpha: 1, ease: "power2.out", duration: 1 },
+      i * 0.12
     );
   });
 }
@@ -181,27 +192,78 @@ function initBlur() {
   );
 }
 
+function setActiveTab(tabs, name) {
+  tabs.forEach((tab) => {
+    const on = tab.dataset.tab === name;
+    tab.classList.toggle("is-active", on);
+    tab.setAttribute("aria-selected", on ? "true" : "false");
+  });
+}
+
 function initCarousel() {
   const root = document.querySelector("[data-carousel]");
   if (!root) return;
-  const track = root.querySelector(".carousel__track");
-  const view = root.querySelector(".carousel__viewport") || root;
-  if (!track || prefersReduce() || typeof ScrollTrigger === "undefined") return;
+  const track = root.querySelector(".showcase__track, .carousel__track");
+  const view = root.querySelector(".showcase__viewport, .carousel__viewport") || root;
+  const tabs = [...root.querySelectorAll("[data-tab]")];
+  if (!track) return;
+
+  const slides = [...track.children];
+  tabs.forEach((tab) => {
+    tab.setAttribute("role", "tab");
+    tab.setAttribute("aria-selected", tab.classList.contains("is-active") ? "true" : "false");
+  });
+
+  const groupAt = (offset) => {
+    let group = slides[0]?.dataset.group || "features";
+    slides.forEach((slide) => {
+      if (slide.offsetLeft <= offset + 48) group = slide.dataset.group || group;
+    });
+    return group;
+  };
+
+  if (prefersReduce() || typeof ScrollTrigger === "undefined") {
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        const first = slides.find((s) => s.dataset.group === tab.dataset.tab);
+        if (!first) return;
+        view.scrollTo({ left: first.offsetLeft, behavior: "auto" });
+        setActiveTab(tabs, tab.dataset.tab);
+      });
+    });
+    view.addEventListener("scroll", () => setActiveTab(tabs, groupAt(view.scrollLeft)), { passive: true });
+    return;
+  }
 
   const shift = () => Math.max(track.scrollWidth - view.clientWidth, 0);
 
-  gsap.to(track, {
+  const tween = gsap.to(track, {
     x: () => -shift(),
     ease: "none",
     scrollTrigger: {
       trigger: root,
       start: "top top",
-      end: () => `+=${shift() + Math.round(window.innerHeight * 0.55)}`,
+      end: () => `+=${shift() + Math.round(window.innerHeight * 0.7)}`,
       pin: true,
       scrub: 0.35,
       invalidateOnRefresh: true,
       anticipatePin: 1,
+      onUpdate: (self) => setActiveTab(tabs, groupAt(shift() * self.progress)),
     },
+  });
+
+  const st = tween.scrollTrigger;
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      const first = slides.find((s) => s.dataset.group === tab.dataset.tab);
+      if (!first || !st) return;
+      const total = shift();
+      const progress = total ? first.offsetLeft / total : 0;
+      const y = st.start + (st.end - st.start) * Math.min(Math.max(progress, 0), 1);
+      const lenis = window.__haloLenis;
+      if (lenis) lenis.scrollTo(y, { duration: 1.05 });
+      else window.scrollTo({ top: y, behavior: "smooth" });
+    });
   });
 }
 
@@ -214,6 +276,7 @@ export function initChapters() {
   if (prefersReduce()) {
     initHeroExpand();
     initBlur();
+    initCarousel();
     return;
   }
   initHeroExpand();

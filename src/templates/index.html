@@ -18,15 +18,27 @@
     <section class="hero" id="intro" data-chapter="intro" data-hero>
       <div class="hero__pin">
         <div class="hero__media" data-hero-media data-media>
-          <video autoplay muted loop playsinline poster="{{prefix}}/assets/images/hero-poster.webp">
-            <source src="{{prefix}}/assets/video/hero.mp4" type="video/mp4" />
+          <video autoplay muted loop playsinline preload="auto" poster="{{prefix}}/assets/images/halo-hero.webp">
+            <source src="{{prefix}}/assets/video/halo-hero.mp4" type="video/mp4" />
           </video>
+          <div class="hero__scrim" data-hero-scrim></div>
           <button class="pause-dot" type="button" aria-label="Pause"></button>
         </div>
         <div class="hero__copy" data-hero-copy>
-          <p class="eyebrow">The quiet housemate</p>
-          <h1>Say hello to Halo</h1>
-          <p class="eyebrow">Beta opens late 2027</p>
+          <p class="hero__kicker">
+            <span class="hero__kicker-ink">
+              <span>The quiet housemate</span>
+              <span class="hero__kicker-sub">Beta opens late 2027</span>
+            </span>
+            <span class="hero__kicker-light" aria-hidden="true">
+              <span>The quiet housemate</span>
+              <span class="hero__kicker-sub">Beta opens late 2027</span>
+            </span>
+          </p>
+          <h1 class="hero__title">
+            <span class="hero__title-ink">Say hello to Halo</span>
+            <span class="hero__title-light" aria-hidden="true">Say hello to Halo</span>
+          </h1>
         </div>
       </div>
     </section>
@@ -34,8 +46,8 @@
     <section class="band band--cream chapter" id="kitchen" data-chapter="kitchen">
       <div class="film" data-pin-film>
         <div class="film__media" data-media>
-          <video autoplay muted loop playsinline poster="{{prefix}}/assets/images/kitchen-poster.webp">
-            <source src="{{prefix}}/assets/video/kitchen.mp4" type="video/mp4" />
+          <video autoplay muted loop playsinline preload="metadata" poster="{{prefix}}/assets/images/halo-kitchen.webp">
+            <source src="{{prefix}}/assets/video/halo-kitchen.mp4" type="video/mp4" />
           </video>
           <button class="pause-dot" type="button" aria-label="Pause"></button>
         </div>
@@ -47,15 +59,15 @@
           <p>Halo starts with the chores that steal evenings: plates left on the table, a sink that fills before dinner, laundry that never quite gets folded.</p>
         </article>
         <figure class="media-tile" data-media>
-          <video autoplay muted loop playsinline poster="{{prefix}}/assets/images/dishes-poster.webp">
-            <source src="{{prefix}}/assets/video/dishes.mp4" type="video/mp4" />
+          <video autoplay muted loop playsinline preload="metadata" poster="{{prefix}}/assets/images/halo-macro.webp">
+            <source src="{{prefix}}/assets/video/halo-macro.mp4" type="video/mp4" />
           </video>
           <span class="chip">Autonomous</span>
           <button class="pause-dot" type="button" aria-label="Pause"></button>
         </figure>
         <figure class="media-tile" data-media>
-          <video autoplay muted loop playsinline poster="{{prefix}}/assets/images/laundry-poster.webp">
-            <source src="{{prefix}}/assets/video/laundry.mp4" type="video/mp4" />
+          <video autoplay muted loop playsinline preload="metadata" poster="{{prefix}}/assets/images/halo-laundry.webp">
+            <source src="{{prefix}}/assets/video/halo-laundry.mp4" type="video/mp4" />
           </video>
           <span class="chip">Gentle</span>
           <button class="pause-dot" type="button" aria-label="Pause"></button>
@@ -82,7 +94,7 @@
           <p class="lede">Layouts change. Light changes. The mug you love isn’t in the same place twice. Halo generalizes from practice — not from a perfect floor plan.</p>
         </div>
         <figure class="blur-block__media">
-          <img src="{{prefix}}/assets/images/homes.webp" alt="A bright open-plan kitchen and living room" width="1800" height="1200" />
+          <img src="{{prefix}}/assets/images/halo-homes.webp" alt="Halo resting on a wooden console in a lived-in home" width="1280" height="720" />
         </figure>
       </div>
       <div class="sleeve-row">
@@ -93,40 +105,69 @@
           <p style="margin-top: 1rem;"><a href="{{prefix}}/technology/">See how Capture Sleeve™ works</a></p>
         </div>
         <figure class="still">
-          <img src="{{prefix}}/assets/images/designed-living.webp" alt="A calm, lived-in living room" width="1400" height="900" />
+          <img src="{{prefix}}/assets/images/halo-laundry.webp" alt="Halo beside folded towels on a bed" width="864" height="1152" />
         </figure>
       </div>
     </section>
 
-    <section class="band band--cream chapter" id="designed" data-chapter="designed">
-      <div class="carousel" data-carousel>
-        <p class="eyebrow">Design</p>
-        <h2>Designed for real use</h2>
-        <div class="carousel__viewport">
-          <div class="carousel__track">
-            <article class="pastel pastel--sage">
+    <section class="showcase-band chapter" id="designed" data-chapter="designed">
+      <div class="showcase" data-carousel>
+        <div class="showcase__viewport">
+          <div class="showcase__track">
+            <article class="wash wash--sage" data-group="features">
               <p class="eyebrow">Privacy</p>
               <p>On-device habits stay local. Cloud training uses consented operators, not your Tuesday night.</p>
             </article>
-            <article class="pastel pastel--blush">
+            <article class="wash wash--photo" data-group="features">
+              <img src="{{prefix}}/assets/images/halo-macro.webp" alt="" width="1152" height="864" />
+              <div class="wash__content">
+                <p class="eyebrow">Presence</p>
+                <p>A terracotta ring you can read across the room — no face, no stare.</p>
+              </div>
+            </article>
+            <article class="wash wash--terracotta" data-group="features">
               <p class="eyebrow">Safety</p>
               <p>Soft shell, low center of gravity, stops when a person is too close.</p>
             </article>
-            <article class="pastel pastel--photo">
-              <img src="{{prefix}}/assets/images/designed-home.webp" alt="" width="1400" height="900" />
-              <div class="pastel__content">
-                <p class="eyebrow">Your home</p>
+            <article class="wash wash--cream" data-group="capture">
+              <p class="eyebrow">Capture</p>
+              <p>The Capture Sleeve™ records the shape of a chore so Halo can rehearse before it ever rolls into a founding household.</p>
+            </article>
+            <article class="wash wash--photo" data-group="capture">
+              <img src="{{prefix}}/assets/images/halo-homes.webp" alt="" width="1280" height="720" />
+              <div class="wash__content">
+                <p class="eyebrow">Practice</p>
                 <p>Maps cupboards and preferred places without rearranging your life.</p>
               </div>
             </article>
-            <article class="pastel pastel--photo">
-              <img src="{{prefix}}/assets/images/designed-kitchen.webp" alt="" width="1400" height="900" />
-              <div class="pastel__content">
-                <p class="eyebrow">Cleanable</p>
-                <p>Seams you can reach. Covers you can wipe. No showroom fragility.</p>
+            <article class="wash wash--sand" data-group="capture">
+              <p class="eyebrow">Consent</p>
+              <p>Training footage comes from operators who opted in. Beta kitchens are not a content studio.</p>
+            </article>
+            <article class="wash wash--photo" data-group="anatomy">
+              <img src="{{prefix}}/assets/images/halo-hero-alt.webp" alt="" width="1280" height="720" />
+              <div class="wash__content">
+                <p class="eyebrow">Form</p>
+                <p>A cream matte squircle. One terracotta mid-ring. Nothing extra to dust around.</p>
+              </div>
+            </article>
+            <article class="wash wash--sage" data-group="anatomy">
+              <p class="eyebrow">Cleanable</p>
+              <p>Seams you can reach. Covers you can wipe. No showroom fragility.</p>
+            </article>
+            <article class="wash wash--photo" data-group="anatomy">
+              <img src="{{prefix}}/assets/images/halo-kitchen.webp" alt="" width="1280" height="720" />
+              <div class="wash__content">
+                <p class="eyebrow">At the sink</p>
+                <p>Quiet enough that you notice where things went, not the motor.</p>
               </div>
             </article>
           </div>
+        </div>
+        <div class="showcase__tabs" data-carousel-tabs role="tablist" aria-label="Design chapters">
+          <button type="button" data-tab="features" class="is-active">Features</button>
+          <button type="button" data-tab="capture">Capture</button>
+          <button type="button" data-tab="anatomy">Anatomy</button>
         </div>
       </div>
     </section>
@@ -180,7 +221,7 @@
       </div>
     </section>
 
-    <section class="band band--blue">
+    <section class="band band--cream">
       <div class="poll-block measure-wide">
         <p class="eyebrow">A small question</p>
         <h2>Which chore would you hand over first?</h2>
@@ -195,16 +236,21 @@
     </section>
 
     <section class="band band--dark chapter" id="beta" data-chapter="beta">
-      <div class="invite-block">
-        <p class="eyebrow">Founding households</p>
-        <h2>Live with Halo first</h2>
-        <p class="lede">Join the waitlist for the first homes to live with Halo. No spam — just cohort updates.</p>
-        <form class="invite" data-newsletter action="#" method="post">
-          <label class="sr-only" for="email">Email</label>
-          <input id="email" name="email" type="email" required placeholder="you@example.com" autocomplete="email" />
-          <button type="submit">Request an invite</button>
-        </form>
-        <p class="invite-status" data-newsletter-status hidden></p>
+      <div class="invite-stage">
+        <div class="invite-block">
+          <p class="eyebrow">Founding households</p>
+          <h2>Live with Halo first</h2>
+          <p class="lede">Join the waitlist for the first homes to live with Halo. No spam — just cohort updates.</p>
+          <form class="invite" data-newsletter action="#" method="post">
+            <label class="sr-only" for="email">Email</label>
+            <input id="email" name="email" type="email" required placeholder="you@example.com" autocomplete="email" />
+            <button type="submit">Request an invite</button>
+          </form>
+          <p class="invite-status" data-newsletter-status hidden></p>
+        </div>
+        <figure class="invite-still">
+          <img src="{{prefix}}/assets/images/halo-hero-alt.webp" alt="Halo canister, cream with a terracotta mid-ring" width="1280" height="720" />
+        </figure>
       </div>
     </section>
   </main>
