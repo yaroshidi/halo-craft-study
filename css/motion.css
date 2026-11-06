@@ -1,0 +1,142 @@
+#curtain {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  background: var(--loader);
+  pointer-events: none;
+  animation: curtain-dismiss 1.15s var(--ease) forwards;
+}
+
+#curtain::before {
+  content: "";
+  width: 48px;
+  height: 48px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='8' fill='none' stroke='%23FAF8EC' stroke-width='2.35'/%3E%3C/svg%3E") center / contain no-repeat;
+  animation: mark-in 0.36s ease-out both;
+}
+
+#curtain.is-done {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  animation: none;
+}
+
+#curtain.is-leaving {
+  animation: none;
+  opacity: 1;
+  visibility: visible;
+}
+
+@keyframes mark-in {
+  from {
+    transform: scale(0.82);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes curtain-dismiss {
+  0%,
+  40% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.will-fade {
+  will-change: opacity, transform;
+}
+
+.hero__media {
+  will-change: clip-path;
+}
+
+.kinetic__word {
+  will-change: transform, opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #curtain,
+  html.reduce-motion #curtain {
+    display: none !important;
+    animation: none !important;
+  }
+
+  .pin-stage {
+    min-height: auto;
+  }
+
+  .hero__media {
+    clip-path: inset(0 round 0) !important;
+  }
+
+  .hero__scrim {
+    opacity: 0.42 !important;
+  }
+
+  .hero__title-ink,
+  .hero__kicker-ink {
+    opacity: 0 !important;
+  }
+
+  .hero__title-light,
+  .hero__kicker-light {
+    opacity: 1 !important;
+  }
+
+  .blur-block__media img {
+    filter: none !important;
+    transform: none !important;
+  }
+
+  .kinetic__word {
+    transform: none !important;
+    opacity: 1 !important;
+  }
+
+  .showcase__viewport {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+html.reduce-motion #curtain {
+  display: none !important;
+  animation: none !important;
+}
+
+html.reduce-motion .hero__media {
+  clip-path: inset(0 round 0);
+}
+
+html.reduce-motion .hero__scrim {
+  opacity: 0.42;
+}
+
+html.reduce-motion .hero__title-ink,
+html.reduce-motion .hero__kicker-ink {
+  opacity: 0;
+}
+
+html.reduce-motion .hero__title-light,
+html.reduce-motion .hero__kicker-light {
+  opacity: 1;
+}
+
+html.reduce-motion .blur-block__media img {
+  filter: none;
+  transform: none;
+}
+
+html.reduce-motion .showcase__viewport {
+  overflow-x: auto;
+}
