@@ -29,7 +29,7 @@ Open http://127.0.0.1:8765/
 | --- | --- |
 | Sticky scroll chapters, curtain, contents rail, FAQ rhythm | Northlane / Halo / Capture Sleeve™ |
 | Quiet light UI, soft media frames | All copy, timeline, specs |
-| Lenis + GSAP motion patterns | Placeholder media |
+| Lenis + GSAP motion patterns | Stock-safe Pexels media, original Halo copy |
 
 ## License
 

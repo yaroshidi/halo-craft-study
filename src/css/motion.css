@@ -2,22 +2,78 @@
   position: fixed;
   inset: 0;
   z-index: 100;
-  background: var(--bg);
+  display: grid;
+  place-items: center;
+  background: var(--loader);
   pointer-events: none;
-  opacity: 0;
-  visibility: hidden;
+}
+
+.curtain__mark {
+  width: 52px;
+  height: 52px;
+  color: var(--cream);
+}
+
+.curtain__mark svg {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 .will-fade {
   will-change: opacity, transform;
 }
 
+.hero__media {
+  will-change: clip-path;
+}
+
+.kinetic__word {
+  will-change: transform, opacity;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  #curtain {
-    display: none;
+  #curtain,
+  html.reduce-motion #curtain {
+    display: none !important;
   }
 
   .pin-stage {
     min-height: auto;
   }
+
+  .hero__media {
+    clip-path: inset(0 round 0) !important;
+  }
+
+  .hero__copy {
+    color: #fff !important;
+  }
+
+  .blur-block__media img {
+    filter: none !important;
+    transform: none !important;
+  }
+
+  .kinetic__word {
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
+
+html.reduce-motion #curtain {
+  display: none !important;
+}
+
+html.reduce-motion .hero__media {
+  clip-path: inset(0 round 0);
+}
+
+html.reduce-motion .hero__copy {
+  color: #fff;
+}
+
+html.reduce-motion .blur-block__media img {
+  filter: none;
+  transform: none;
 }

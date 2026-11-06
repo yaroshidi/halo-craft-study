@@ -6,200 +6,207 @@
 <body>
   <div id="curtain" aria-hidden="true"></div>
   {{header}}
-  <main class="shell">
-    <section class="hero wrap" id="intro" data-chapter="intro" data-hero>
-      <p class="mono hero__eyebrow">Northlane · Halo</p>
-      <h1>Say hello to Halo</h1>
-      <p class="hero__sub">The quiet housemate. Clears tables, loads the dishwasher, folds the easy laundry — and learns the rest of your home over time.</p>
-      <p class="mono muted hero__meta">Beta opens late 2027</p>
-      <div class="btn-row" style="margin-top: 1.75rem;">
-        <a class="btn btn--primary" href="{{prefix}}/beta/">Apply for beta</a>
-        <a class="btn btn--ghost" href="{{prefix}}/company/">Our story</a>
+  <nav class="progress" data-progress aria-label="On this page">
+    <a href="#intro" data-target="intro"><span class="sr-only">Intro</span></a>
+    <a href="#kitchen" data-target="kitchen"><span class="sr-only">Kitchen</span></a>
+    <a href="#homes" data-target="homes"><span class="sr-only">Homes</span></a>
+    <a href="#designed" data-target="designed"><span class="sr-only">Designed</span></a>
+    <a href="#beta" data-target="beta"><span class="sr-only">Beta</span></a>
+  </nav>
+
+  <main>
+    <section class="hero" id="intro" data-chapter="intro" data-hero>
+      <div class="hero__pin">
+        <div class="hero__media" data-hero-media data-media>
+          <video autoplay muted loop playsinline poster="{{prefix}}/assets/images/hero-poster.webp">
+            <source src="{{prefix}}/assets/video/hero.mp4" type="video/mp4" />
+          </video>
+          <button class="pause-dot" type="button" aria-label="Pause"></button>
+        </div>
+        <div class="hero__copy" data-hero-copy>
+          <p class="eyebrow">The quiet housemate</p>
+          <h1>Say hello to Halo</h1>
+          <p class="eyebrow">Beta opens late 2027</p>
+        </div>
       </div>
     </section>
 
-    <div class="wrap home-layout">
-      <nav class="contents" data-contents aria-label="On this page">
-        <a href="#intro" data-target="intro">Intro</a>
-        <a href="#kitchen" data-target="kitchen">Kitchen</a>
-        <a href="#homes" data-target="homes">Homes</a>
-        <a href="#learning" data-target="learning">Learning</a>
-        <a href="#sleeve" data-target="sleeve">Sleeve</a>
-        <a href="#designed" data-target="designed">Designed</a>
-        <a href="#faq" data-target="faq">FAQ</a>
-        <a href="#beta" data-target="beta">Beta</a>
-      </nav>
-
-      <div class="home-main">
-        <section class="section chapter" id="kitchen" data-chapter="kitchen">
-          <div class="pin-stage" data-pin="kitchen">
-            <div class="grid-2">
-              <div class="pin-stage__copy stack">
-                <p class="mono muted">01 · Kitchen</p>
-                <h2>Mundane made useful</h2>
-                <p class="muted">Halo starts with the chores that steal evenings: plates left on the table, a sink that fills before dinner, laundry that never quite gets folded.</p>
-                <p class="muted">No grand promises. Just steady help in the rooms you already live in.</p>
-              </div>
-              <figure class="pin-stage__media" data-pin-media="kitchen">
-                <div class="media-frame">
-                  <div class="media-placeholder">Kitchen sequence · placeholder</div>
-                </div>
-                <figcaption class="media-caption">Halo clearing a table after breakfast — study still.</figcaption>
-              </figure>
-            </div>
-          </div>
-        </section>
-
-        <section class="section chapter" id="homes" data-chapter="homes">
-          <div class="stack-lg">
-            <div class="stack" style="max-width: 36rem;">
-              <p class="mono muted">02 · Homes</p>
-              <h2>Works in unfamiliar homes</h2>
-              <p class="muted">Layouts change. Light changes. The mug you love isn’t in the same place twice. Halo generalizes from practice — not from a perfect floor plan.</p>
-            </div>
-            <div class="scrub-pair" data-scrub="homes" style="aspect-ratio: 16 / 10;">
-              <div class="media-frame">
-                <div class="media-placeholder" style="background: linear-gradient(160deg, #d9d6cf, #c5cfc8);">Home A · soft morning</div>
-              </div>
-              <div class="media-frame" data-scrub-b>
-                <div class="media-placeholder" style="background: linear-gradient(160deg, #cfc9c0, #b7c4be);">Home B · evening light</div>
-              </div>
-            </div>
-            <p class="media-caption">Scroll to crossfade between two home studies.</p>
-          </div>
-        </section>
-
-        <section class="section chapter section--dark" id="learning" data-chapter="learning">
-          <div class="wrap pin-stage" data-pin="learning" style="width: 100%;">
-            <div class="grid-2">
-              <div class="pin-stage__copy stack">
-                <p class="mono" style="opacity: 0.7;">03 · Learning</p>
-                <h2>Always learning</h2>
-                <p style="opacity: 0.78;">Skills arrive in chapters: clear table → rinse and load → tidy laundry → new rooms as your household teaches them.</p>
-                <ul class="muted" style="margin: 0; padding-left: 1.1rem; opacity: 0.78; line-height: 1.8;">
-                  <li>2025 — table clearing in lab kitchens</li>
-                  <li>2026 — dishwasher load patterns</li>
-                  <li>2027 — beta households, new chores weekly</li>
-                </ul>
-              </div>
-              <figure class="pin-stage__media" data-pin-media="learning">
-                <div class="media-frame">
-                  <div class="media-placeholder" style="background: linear-gradient(145deg, #2a2a2a, #3d4742); color: #c9c6bf;">Skill timeline · placeholder</div>
-                </div>
-                <figcaption class="media-caption" style="color: rgba(242,241,238,0.55);">Fictional milestones for this craft study.</figcaption>
-              </figure>
-            </div>
-          </div>
-        </section>
-
-        <section class="section chapter" id="sleeve" data-chapter="sleeve">
-          <div class="grid-2">
-            <div class="stack">
-              <p class="mono muted">04 · Capture</p>
-              <h2>From imitation to intuition</h2>
-              <p class="muted">Operators wear the Capture Sleeve™ off-site to demonstrate chores with consented homes. Halo practices the motion language — not your private footage on a marketing reel.</p>
-              <p><a href="{{prefix}}/technology/">See how Capture Sleeve™ works →</a></p>
-            </div>
-            <div class="media-frame media-frame--portrait">
-              <div class="media-placeholder">Capture Sleeve™ · study form</div>
-            </div>
-          </div>
-        </section>
-
-        <section class="section chapter" id="designed" data-chapter="designed">
-          <div class="stack-lg">
-            <div class="stack" style="max-width: 34rem;">
-              <p class="mono muted">05 · Designed</p>
-              <h2>Designed for real use</h2>
-              <p class="muted">Quiet materials. Easy to wipe. Privacy that doesn’t need a lecture.</p>
-            </div>
-            <div class="card-grid">
-              <article class="card">
-                <h3>Privacy</h3>
-                <p>On-device habits stay local. Cloud training uses consented operators, not your Tuesday night.</p>
-              </article>
-              <article class="card">
-                <h3>Safety</h3>
-                <p>Soft shell, low center of gravity, stops when a person is too close.</p>
-              </article>
-              <article class="card">
-                <h3>Your home</h3>
-                <p>Maps cupboards and preferred places without rearranging your life.</p>
-              </article>
-              <article class="card">
-                <h3>Cleanable</h3>
-                <p>Seams you can reach. Covers you can wipe. No showroom fragility.</p>
-              </article>
-            </div>
-          </div>
-        </section>
-
-        <section class="section chapter" id="faq" data-chapter="faq">
-          <div class="stack-lg" style="max-width: 44rem;">
-            <div class="stack">
-              <p class="mono muted">06 · FAQ</p>
-              <h2>Questions, answered plainly</h2>
-            </div>
-            <div class="faq" data-faq>
-              <div class="faq__item">
-                <button class="faq__q" type="button" aria-expanded="false">
-                  <span>What can Halo do on day one?</span><span aria-hidden="true">+</span>
-                </button>
-                <div class="faq__a" role="region">
-                  <div class="faq__a-inner">Clear tables, carry dishes to the sink, load a typical dishwasher, and fold simple laundry once you’ve shown preferred folds.</div>
-                </div>
-              </div>
-              <div class="faq__item">
-                <button class="faq__q" type="button" aria-expanded="false">
-                  <span>Does it film my home?</span><span aria-hidden="true">+</span>
-                </button>
-                <div class="faq__a" role="region">
-                  <div class="faq__a-inner">Working cameras process on-device for navigation. Training footage comes from consented operator sessions with the Capture Sleeve™ — not from beta homes by default.</div>
-                </div>
-              </div>
-              <div class="faq__item">
-                <button class="faq__q" type="button" aria-expanded="false">
-                  <span>When does beta open?</span><span aria-hidden="true">+</span>
-                </button>
-                <div class="faq__a" role="region">
-                  <div class="faq__a-inner">Late 2027 for founding households. Applications are open now; we’ll write when a city cohort starts.</div>
-                </div>
-              </div>
-              <div class="faq__item">
-                <button class="faq__q" type="button" aria-expanded="false">
-                  <span>How loud is it?</span><span aria-hidden="true">+</span>
-                </button>
-                <div class="faq__a" role="region">
-                  <div class="faq__a-inner">Quieter than a dishwasher cycle. Soft wheels, no fan scream. You’ll notice it more by where things went than by noise.</div>
-                </div>
-              </div>
-              <div class="faq__item">
-                <button class="faq__q" type="button" aria-expanded="false">
-                  <span>Is this a real product?</span><span aria-hidden="true">+</span>
-                </button>
-                <div class="faq__a" role="region">
-                  <div class="faq__a-inner">No. Northlane and Halo are invented for a private craft study of marketing-site motion and structure.</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="section chapter section--elevated" id="beta" data-chapter="beta">
-          <div class="stack" style="max-width: 36rem;">
-            <p class="mono muted">07 · Beta</p>
-            <h2>Founding households</h2>
-            <p class="muted">Join the waitlist for the first homes to live with Halo. No spam — just cohort updates.</p>
-            <form class="stack" data-newsletter style="margin-top: 0.5rem;" action="#" method="post">
-              <label class="sr-only" for="email">Email</label>
-              <input id="email" name="email" type="email" required placeholder="you@example.com" style="min-height: 2.75rem; padding: 0.7rem 0.9rem; border: 1px solid var(--line); border-radius: var(--radius-sm); background: var(--bg); font: inherit;" />
-              <button class="btn btn--primary" type="submit" style="align-self: start;">Request an invite</button>
-              <p class="muted" data-newsletter-status hidden style="font-size: 0.9rem;"></p>
-            </form>
-          </div>
-        </section>
+    <section class="band band--cream chapter" id="kitchen" data-chapter="kitchen">
+      <div class="film" data-pin-film>
+        <div class="film__media" data-media>
+          <video autoplay muted loop playsinline poster="{{prefix}}/assets/images/kitchen-poster.webp">
+            <source src="{{prefix}}/assets/video/kitchen.mp4" type="video/mp4" />
+          </video>
+          <button class="pause-dot" type="button" aria-label="Pause"></button>
+        </div>
+        <h2 class="film__title">It starts in the kitchen</h2>
       </div>
-    </div>
+      <div class="tile-row">
+        <article class="text-tile">
+          <p class="eyebrow">Kitchen</p>
+          <p>Halo starts with the chores that steal evenings: plates left on the table, a sink that fills before dinner, laundry that never quite gets folded.</p>
+        </article>
+        <figure class="media-tile" data-media>
+          <video autoplay muted loop playsinline poster="{{prefix}}/assets/images/dishes-poster.webp">
+            <source src="{{prefix}}/assets/video/dishes.mp4" type="video/mp4" />
+          </video>
+          <span class="chip">Autonomous</span>
+          <button class="pause-dot" type="button" aria-label="Pause"></button>
+        </figure>
+        <figure class="media-tile" data-media>
+          <video autoplay muted loop playsinline poster="{{prefix}}/assets/images/laundry-poster.webp">
+            <source src="{{prefix}}/assets/video/laundry.mp4" type="video/mp4" />
+          </video>
+          <span class="chip">Gentle</span>
+          <button class="pause-dot" type="button" aria-label="Pause"></button>
+        </figure>
+      </div>
+    </section>
+
+    <section class="band band--sage chapter" id="homes" data-chapter="homes">
+      <div class="kinetic" data-kinetic>
+        <p class="eyebrow">A simple aim</p>
+        <h2 class="kinetic__line" aria-label="Mundane made useful">
+          <span class="kinetic__word">Mundane</span>
+          <span class="kinetic__word">made</span>
+          <span class="kinetic__word">useful</span>
+        </h2>
+      </div>
+    </section>
+
+    <section class="band band--offwhite">
+      <div class="blur-block" data-blur>
+        <div class="blur-block__copy">
+          <p class="eyebrow">Homes</p>
+          <h2>Works in unfamiliar homes</h2>
+          <p class="lede">Layouts change. Light changes. The mug you love isn’t in the same place twice. Halo generalizes from practice — not from a perfect floor plan.</p>
+        </div>
+        <figure class="blur-block__media">
+          <img src="{{prefix}}/assets/images/homes.webp" alt="A bright open-plan kitchen and living room" width="1800" height="1200" />
+        </figure>
+      </div>
+      <div class="sleeve-row">
+        <div>
+          <p class="eyebrow">Capture</p>
+          <h2>From imitation to intuition</h2>
+          <p>Operators wear the Capture Sleeve™ off-site to demonstrate chores in consented homes. Halo practices the motion language — not your private footage on a marketing reel.</p>
+          <p style="margin-top: 1rem;"><a href="{{prefix}}/technology/">See how Capture Sleeve™ works</a></p>
+        </div>
+        <figure class="still">
+          <img src="{{prefix}}/assets/images/designed-living.webp" alt="A calm, lived-in living room" width="1400" height="900" />
+        </figure>
+      </div>
+    </section>
+
+    <section class="band band--cream chapter" id="designed" data-chapter="designed">
+      <div class="carousel" data-carousel>
+        <p class="eyebrow">Design</p>
+        <h2>Designed for real use</h2>
+        <div class="carousel__viewport">
+          <div class="carousel__track">
+            <article class="pastel pastel--sage">
+              <p class="eyebrow">Privacy</p>
+              <p>On-device habits stay local. Cloud training uses consented operators, not your Tuesday night.</p>
+            </article>
+            <article class="pastel pastel--blush">
+              <p class="eyebrow">Safety</p>
+              <p>Soft shell, low center of gravity, stops when a person is too close.</p>
+            </article>
+            <article class="pastel pastel--photo">
+              <img src="{{prefix}}/assets/images/designed-home.webp" alt="" width="1400" height="900" />
+              <div class="pastel__content">
+                <p class="eyebrow">Your home</p>
+                <p>Maps cupboards and preferred places without rearranging your life.</p>
+              </div>
+            </article>
+            <article class="pastel pastel--photo">
+              <img src="{{prefix}}/assets/images/designed-kitchen.webp" alt="" width="1400" height="900" />
+              <div class="pastel__content">
+                <p class="eyebrow">Cleanable</p>
+                <p>Seams you can reach. Covers you can wipe. No showroom fragility.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band band--offwhite">
+      <div class="faq-block measure-wide">
+        <p class="eyebrow">FAQ</p>
+        <h2>Questions, answered plainly</h2>
+        <div class="faq" data-faq>
+          <div class="faq__item">
+            <button class="faq__q" type="button" aria-expanded="false">
+              <span>What can Halo do on day one?</span><span aria-hidden="true">+</span>
+            </button>
+            <div class="faq__a" role="region">
+              <div class="faq__a-inner">Clear tables, carry dishes to the sink, load a typical dishwasher, and fold simple laundry once you’ve shown preferred folds.</div>
+            </div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__q" type="button" aria-expanded="false">
+              <span>Does it film my home?</span><span aria-hidden="true">+</span>
+            </button>
+            <div class="faq__a" role="region">
+              <div class="faq__a-inner">Working cameras process on-device for navigation. Training footage comes from consented operator sessions with the Capture Sleeve™ — not from beta homes by default.</div>
+            </div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__q" type="button" aria-expanded="false">
+              <span>When does beta open?</span><span aria-hidden="true">+</span>
+            </button>
+            <div class="faq__a" role="region">
+              <div class="faq__a-inner">Late 2027 for founding households. Applications are open now; we’ll write when a city cohort starts.</div>
+            </div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__q" type="button" aria-expanded="false">
+              <span>How loud is it?</span><span aria-hidden="true">+</span>
+            </button>
+            <div class="faq__a" role="region">
+              <div class="faq__a-inner">Quieter than a dishwasher cycle. Soft wheels, no fan scream. You’ll notice it more by where things went than by noise.</div>
+            </div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__q" type="button" aria-expanded="false">
+              <span>Is this a real product?</span><span aria-hidden="true">+</span>
+            </button>
+            <div class="faq__a" role="region">
+              <div class="faq__a-inner">No. Northlane and Halo are invented for a private craft study of marketing-site motion and structure.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band band--blue">
+      <div class="poll-block measure-wide">
+        <p class="eyebrow">A small question</p>
+        <h2>Which chore would you hand over first?</h2>
+        <div class="poll" data-poll>
+          <button type="button">Clearing the table</button>
+          <button type="button">Loading the dishwasher</button>
+          <button type="button">Folding the easy laundry</button>
+          <button type="button">Something I haven’t named yet</button>
+        </div>
+        <p class="poll-note" data-poll-note hidden>Noted — Halo will practice that first.</p>
+      </div>
+    </section>
+
+    <section class="band band--dark chapter" id="beta" data-chapter="beta">
+      <div class="invite-block">
+        <p class="eyebrow">Founding households</p>
+        <h2>Live with Halo first</h2>
+        <p class="lede">Join the waitlist for the first homes to live with Halo. No spam — just cohort updates.</p>
+        <form class="invite" data-newsletter action="#" method="post">
+          <label class="sr-only" for="email">Email</label>
+          <input id="email" name="email" type="email" required placeholder="you@example.com" autocomplete="email" />
+          <button type="submit">Request an invite</button>
+        </form>
+        <p class="invite-status" data-newsletter-status hidden></p>
+      </div>
+    </section>
   </main>
   {{footer}}
   {{scripts}}

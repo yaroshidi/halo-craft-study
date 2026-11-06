@@ -1,22 +1,29 @@
 :root {
-  --bg: #f7f6f3;
+  --bg: #ffffff;
   --bg-elevated: #ffffff;
+  --cream: #faf8ec;
+  --sage: #c5d1c4;
+  --sage-soft: #e4ebe3;
+  --offwhite: #f3f1ea;
+  --blue: #d4e2ef;
+  --dark-band: #161513;
+  --dark-ink: #f4f2ee;
   --ink: #1a1a1a;
-  --ink-muted: #5c5c5c;
+  --ink-muted: #5e5c58;
   --line: rgba(26, 26, 26, 0.12);
-  --accent: #2f5d50;
-  --accent-soft: #dce8e3;
-  --dark-band: #141414;
-  --dark-ink: #f2f1ee;
+  --accent: #d4764e;
+  --accent-soft: #f0d2c3;
+  --loader: #e07a4c;
+  --footer-wash: #c5d1c4;
 
-  --font-sans: "IBM Plex Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --font-sans: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-mono: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
-  --text-display: clamp(2.5rem, 6vw, 4.5rem);
-  --text-h2: clamp(1.75rem, 3vw, 2.5rem);
-  --text-h3: clamp(1.25rem, 2vw, 1.5rem);
-  --text-body: 1.0625rem;
-  --text-caption: 0.8125rem;
+  --text-display: clamp(2.8rem, 9vw, 5.6rem);
+  --text-h2: clamp(1.85rem, 4.2vw, 3.25rem);
+  --text-h3: clamp(1.15rem, 1.6vw, 1.4rem);
+  --text-body: 0.9375rem;
+  --text-caption: 0.6875rem;
 
   --space-1: 0.25rem;
   --space-2: 0.5rem;
@@ -29,9 +36,11 @@
   --space-9: 6rem;
   --space-10: 8rem;
 
-  --radius: 14px;
+  --radius: 8px;
   --radius-sm: 8px;
+  --gap-tight: 4px;
+  --page-pad: 12px;
   --max: 1160px;
-  --header-h: 4rem;
+  --header-h: 3.65rem;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 }

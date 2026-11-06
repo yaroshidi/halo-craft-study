@@ -7,11 +7,108 @@
   <div id="curtain" aria-hidden="true"></div>
   {{header}}
   <main class="shell">
-    <section class="page-stub wrap">
-      <p class="mono muted">Northlane</p>
-      <h1>Design</h1>
-      <p>Form, materials, colorways, and safety. Full page craft lands in Phase C.</p>
-      <p style="margin-top: 1.5rem;"><a href="{{prefix}}/">← Back home</a></p>
+    <section class="page-hero wrap" data-hero>
+      <p class="mono muted">Design</p>
+      <h1>Built for real rooms</h1>
+      <p class="lede">Soft shell, wipeable seams, colors that sit next to oak and plaster — not a showroom gloss.</p>
+    </section>
+
+    <section class="section wrap">
+      <div class="pin-stage" data-pin="design-form">
+        <div class="grid-2">
+          <div class="stack pin-stage__copy">
+            <p class="mono muted">01 · Form</p>
+            <h2>Quiet presence</h2>
+            <p class="muted">Rounded volume, no sharp corners at kid height, a single calm LED that dims when the room is dark.</p>
+            <p class="muted">Halo should read as furniture that moves — not a gadget pile.</p>
+          </div>
+          <figure class="pin-stage__media" data-pin-media="design-form">
+            <div class="media-frame">
+              <img src="{{prefix}}/assets/images/kitchen.svg" alt="" width="1600" height="1000" loading="lazy" />
+            </div>
+            <figcaption class="media-caption">Form study — soft shell silhouette.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--elevated">
+      <div class="wrap stack-lg">
+        <div class="stack prose-width">
+          <p class="mono muted">02 · Materials</p>
+          <h2>Easy to clean</h2>
+          <p class="muted">Matte polymer shell, textile sleeve on the tray, sealed seams you can reach with a cloth. No chrome fingerprints.</p>
+        </div>
+        <div class="card-grid">
+          <article class="card">
+            <h3>Shell</h3>
+            <p>Impact-soft polymer with a wipeable finish.</p>
+          </article>
+          <article class="card">
+            <h3>Tray</h3>
+            <p>Removable liner for crumbs and condensation.</p>
+          </article>
+          <article class="card">
+            <h3>Wheels</h3>
+            <p>Soft compound for wood and tile — no black streaks.</p>
+          </article>
+          <article class="card">
+            <h3>Seams</h3>
+            <p>Fewer gaps. The ones that remain open for a cloth.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section wrap">
+      <div class="stack-lg">
+        <div class="stack prose-width">
+          <p class="mono muted">03 · Colorways</p>
+          <h2>Four quiet finishes</h2>
+          <p class="muted">Named for rooms, not marketing seasons.</p>
+        </div>
+        <div class="swatch-row">
+          <div class="swatch">
+            <div class="swatch__chip" style="background:#e8e4dc;"></div>
+            <p><strong>Plaster</strong><br />Warm light grey</p>
+          </div>
+          <div class="swatch">
+            <div class="swatch__chip" style="background:#d5ddd6;"></div>
+            <p><strong>Sage</strong><br />Soft green</p>
+          </div>
+          <div class="swatch">
+            <div class="swatch__chip" style="background:#cfc7bc;"></div>
+            <p><strong>Clay</strong><br />Muted sand</p>
+          </div>
+          <div class="swatch">
+            <div class="swatch__chip" style="background:#2a2f2c;"></div>
+            <p><strong>Ink</strong><br />Deep green-black</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--elevated">
+      <div class="wrap grid-2">
+        <div class="stack">
+          <p class="mono muted">04 · Safety</p>
+          <h2>Stops when people are close</h2>
+          <p class="muted">Bumpers, proximity hold, and a clear pause affordance on the top shell. Halo yields to humans — always.</p>
+        </div>
+        <div class="stack">
+          <p class="mono muted">05 · Personalization</p>
+          <h2>Your places, remembered</h2>
+          <p class="muted">Show Halo where mugs live once. Prefer quiet hours. Hide the LED. None of that needs a cloud account for basic use.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section wrap">
+      <div class="stack" style="max-width: 36rem;">
+        <h2>See it in a founding home</h2>
+        <p class="muted">Design details keep evolving through beta. Apply if you want Halo in the first cohorts.</p>
+        <a class="btn btn--primary" href="{{prefix}}/beta/">Apply for beta</a>
+      </div>
     </section>
   </main>
   {{footer}}

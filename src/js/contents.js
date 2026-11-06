@@ -1,5 +1,5 @@
 export function initContents() {
-  const rail = document.querySelector("[data-contents]");
+  const rail = document.querySelector("[data-progress], [data-contents]");
   const chapters = [...document.querySelectorAll("[data-chapter]")];
   if (!rail || !chapters.length) return;
 
@@ -23,4 +23,15 @@ export function initContents() {
 
   chapters.forEach((el) => io.observe(el));
   setActive(chapters[0].dataset.chapter);
+
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  links.forEach((link) => {
+    link.addEventListener("click", (e) => {
+      const id = link.dataset.target;
+      const target = id && document.getElementById(id);
+      if (!target) return;
+      e.preventDefault();
+      target.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
+    });
+  });
 }

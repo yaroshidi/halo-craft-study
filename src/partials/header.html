@@ -1,13 +1,22 @@
 <header class="site-header" data-header>
-  <div class="site-header__inner">
-    <a class="wordmark" href="{{prefix}}/">Northlane</a>
-    <nav class="nav" aria-label="Primary">
-      <a href="{{prefix}}/">Home</a>
-      <a href="{{prefix}}/technology/">Technology</a>
-      <a href="{{prefix}}/design/">Design</a>
-      <a href="{{prefix}}/company/">Company</a>
-      <a href="{{prefix}}/journal/">Journal</a>
-    </nav>
-    <a class="nav-cta" href="{{prefix}}/beta/">Apply for beta</a>
+  <div class="pill">
+    <a class="wordmark" href="{{prefix}}/">
+      <span class="mark" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+        <circle cx="12" cy="12" r="7.25" fill="none" stroke="currentColor" stroke-width="1.75"/>
+        <circle cx="12" cy="12" r="2.15" fill="currentColor"/>
+      </svg>
+      </span>
+      Northlane
+    </a>
+    <button type="button" class="menu-toggle" data-menu-toggle aria-expanded="false" aria-controls="site-menu">Menu</button>
   </div>
+  <nav id="site-menu" class="menu-panel" data-menu hidden aria-label="Primary">
+    <a href="{{prefix}}/">Home</a>
+    <a href="{{prefix}}/technology/">Technology</a>
+    <a href="{{prefix}}/design/">Design</a>
+    <a href="{{prefix}}/company/">Company</a>
+    <a href="{{prefix}}/journal/">Journal</a>
+    <a href="{{prefix}}/beta/">Apply for beta</a>
+  </nav>
 </header>
