@@ -1,0 +1,23 @@
+#curtain {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: var(--bg);
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.will-fade {
+  will-change: opacity, transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #curtain {
+    display: none;
+  }
+
+  .pin-stage {
+    min-height: auto;
+  }
+}
